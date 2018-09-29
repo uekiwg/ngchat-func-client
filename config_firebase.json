@@ -1,0 +1,10 @@
+{
+    "apiKey": "<your-key>",
+    "authDomain": "<your-project-authdomain>",
+    "databaseURL": "<your-database-URL>",
+    "projectId": "<your-project-id>",
+    "storageBucket": "<your-storage-bucket>",
+    "email": "Fireabseアカウントのメールアドレス",
+    "password": "Fireabseアカウントのパスワード",
+    "addCommentURL": "https://us-central1-ngchat-fc121.cloudfunctions.net/addComment"
+}

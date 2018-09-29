@@ -1,0 +1,5 @@
+{
+    "apiKey": "<your-key>",
+    "authURL": "https://westus.api.cognitive.microsoft.com/sts/v1.0/issueToken",
+    "wav2textURL": "https://westus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1"
+}
