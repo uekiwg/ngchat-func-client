@@ -9,6 +9,18 @@
 
 ・config_firebase.json へAPIキー、認証メールアドレス(Firebaseアカウント)、FunctionsのURLを設定する。
 
+・依存ライブラリのインストール
+  pip install requests
+  pip install pyrebase
+  ※UnicodeDecodeError: 'cp932' codec can't decode byte 0x93 in position 502: illegal multibyte sequence
+    エラーが発生する場合、インストールモジュールをダウンロードして、setup.pyを修正
+      pip download pyrebase
+      7Zipでjws-0.1.3.tar.gz\jws-0.1.3.tar\jws-0.1.3\setup.py を開き
+        return open(os.path.join(os.path.dirname(__file__), fname)).read() を
+        return open(os.path.join(os.path.dirname(__file__), fname),encoding="UTF-8").read() に変更
+      pip install jws-0.1.3.tar.gz
+      pip install pyrebase
+
 起動方法)
   python3 main.py
   

@@ -15,8 +15,12 @@ class MyAudio:
         if os.path.exists(wav):
             os.remove(wav)
         
-        cmd = "rec " + wav + " trim 0 " + str(rec_sec)
-        log.debug("Exec " + cmd)
+        if os.name == 'nt': # Windows
+            # http://www.cepstrum.co.jp/download/recplay/recplay.html
+            cmd = "trec44s.exe " + wav + " " + str(rec_sec)
+        else:
+            cmd = "rec " + wav + " trim 0 " + str(rec_sec)
+        log.info("Exec " + cmd)
         p = subprocess.Popen(cmd, shell=True)
         p.wait()
         #sleep(10)
