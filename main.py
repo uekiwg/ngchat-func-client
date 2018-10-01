@@ -23,6 +23,9 @@
 
 起動方法)
   python3 main.py
+
+  Windows環境で No module named 'Crypto' エラーとなったら
+      C:\Program Files\Python37\Lib\site-packages\crypto を Cryptoに変更
   
 """
 import sys
@@ -39,8 +42,8 @@ with open('./config_azure.json')    as f: config_azure = json.load(f)
 with open('./config_firebase.json') as f: config_firebase = json.load(f)
 
 # 録音してBeing Speech To Text へ送信する音声ファイル
-wav = "./tmp/audio_rec.wav"
-#wav = "./tmp/ohayo.wav"
+#wav = "./tmp/audio_rec.wav"
+wav = "./tmp/ohayo.wav"
 
 # 録音時間(秒)
 rec_sec = 5
@@ -54,7 +57,7 @@ while True:
     print("Enter実行後、" + str(rec_sec) + "秒以内で何か話してください！")
     line = sys.stdin.readline().strip()
 
-    audio.rec_wav(wav, rec_sec)
+    #audio.rec_wav(wav, rec_sec)
     text = azure.wav_to_text(wav)
 
     fbase.add_comment(text)
